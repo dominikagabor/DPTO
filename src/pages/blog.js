@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from '../containers/Layout';
 import { graphql } from "gatsby";
-import { PostLink} from '../components/postlink';
+import PostLink from '../components/Postlink';
 
 export default ({
     data: {
@@ -10,7 +10,7 @@ export default ({
 }) => {
     return (
         <Layout>
-        {edges.map(post => <PostLink post={post}/>)},  
+            {edges.map(post => <PostLink key={post.node.id} post={post.node}/>)}
         </Layout>
     );
 }
@@ -32,4 +32,4 @@ export const pageQuery = graphql`
       }
     }
   }
-  `
+`
