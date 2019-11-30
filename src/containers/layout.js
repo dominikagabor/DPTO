@@ -1,7 +1,6 @@
 import React from 'react';
 import { Header } from '../components/Header';
-import { Layout } from '../components/contact';
-
+import { Contact } from '../components/Contact';
 export const Layout = ({ children }) => 
 <>
 <Header/>
