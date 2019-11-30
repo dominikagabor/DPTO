@@ -1,3 +1,8 @@
+import React from "react";
+import { Layout } from '../containers/Layout';
+import { graphql } from "gatsby";
+import { PostLink} from '../components/postlink';
+
 export default ({
     data: {
         allMarkdownRemark: { edges },
@@ -5,6 +10,7 @@ export default ({
 }) => {
     return (
         <Layout>
+        {edges.map(post => <PostLink post={post}/>)},  
         </Layout>
     );
 }
